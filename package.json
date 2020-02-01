@@ -1,0 +1,15 @@
+{
+  "name": "xoshiro256",
+  "version": "0.1.0",
+  "type": "module",
+  "author": {
+    "name": "Sami Kukkonen",
+    "email": "sami@samikukkonen.fi"
+  },
+  "license": "MIT",
+  "typings": "index.d.ts",
+  "main": "index.mjs",
+  "devDependencies": {
+    "benchmark": "2.1.4"
+  }
+}

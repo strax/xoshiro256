@@ -1,0 +1,7 @@
+/target
+**/*.rs.bk
+*.wasm
+*.js
+*.d.ts
+!index.js
+node_modules
