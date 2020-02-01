@@ -37,7 +37,7 @@ Calling this function will modify the internal state of the PRNG.
 Each algorithm was ran for 10 000 000 iterations.
 Test environment: Intel i7-8700K, Windows 10 (build 18363.628), Node.js 13.7.0
 
-| RNG | Performance | Deviation | 
+| RNG | Performance | RME | 
 | --- | ----------- | --------- |
 | `Math.random` | 170 570 909 ops/sec | ±0.45% |
 | `xoshiro256**` (WASM) | 66 302 932 ops/sec | ±0.57% |
