@@ -10,6 +10,19 @@ const xoshiro256a = Xoshiro256
 xoshiro256a.seed(seed)
 const xoshiro256b = new X256(seed)
 
+
+function summary(benches) {
+    let counter = 1
+    for (const bench of benches) {
+        console.info("[%i] %s", counter, bench.name)
+        console.info("      %s op/s ±%s%", (bench.hz.toFixed(bench.hz < 100 ? 2 : 0)), bench.stats.rme.toFixed(2))
+        console.info("      SSD: %s", bench.stats.deviation.toFixed(12))
+        console.info("      SEM: %s", bench.stats.sem.toFixed(12))
+        console.info("      MOE: %s", bench.stats.moe.toFixed(12))
+        counter++
+    }
+}
+
 const suite = new Benchmark.Suite()
 suite.add("xoshiro256** WASM implementation", function xoshiro256ss_rust_wasm32() {
     return xoshiro256a.next()
@@ -25,9 +38,11 @@ suite.add("xoshiro256** JS implementation", function xoshiro256ss_js_bigint() {
 })
 
 suite.on("complete", function print() {
+    const benches = []
     for (let i = 0; i < this.length; i++) {
-        console.info(this[i].toString())
+        benches.push(this[i])
     }
+    summary(benches)
 })
 suite.run()
 
