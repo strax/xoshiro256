@@ -1,6 +1,8 @@
 # xoshiro256
 
-This package implements the [`xoshiro256**`][xoshiro256] pseudo-random number generator as a [WebAssembly][wasm] module, implemented in Rust with a minimal JavaScript wrapper. The optimized wasm module weighs just 610 bytes and performs favourably compared to a JavaScript implementation.
+This package implements the [`xoshiro256**`][xoshiro256] pseudo-random number generator as a [WebAssembly][wasm] module, implemented in Rust with a minimal JavaScript wrapper.
+
+The optimized wasm module weighs just 610 bytes and performs favourably compared to a JavaScript implementation.
 
 ## NOTE!
 
